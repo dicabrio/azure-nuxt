@@ -32,3 +32,19 @@ steps:
   inputs:
     command: custom
     customCommand: 'test'
+
+- script: npm run build 
+  displayName: 'Building code (DEV)'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(System.DefaultWorkingDirectory)'
+    Contents: |
+      dist\*
+      package.json
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+    includeRootFolder: false

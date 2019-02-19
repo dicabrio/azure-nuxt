@@ -1,7 +1,7 @@
 {
-  "name": "BookChoice-Test",
+  "name": "book-choice",
   "version": "1.0.0",
-  "description": "My amazing Nuxt.js project",
+  "description": "BookChoice",
   "author": "Robert Cabri",
   "private": true,
   "scripts": {
