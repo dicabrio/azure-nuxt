@@ -29,7 +29,7 @@
         v-validate="'required|email'"
         autofocus
       />
-      <label for="inputEmail">Email address</label>
+      <label for="inputEmail">Email address sdfsd</label>
     </div>
     <div class="text-danger">
       <span>{{ errors.first('email') }}</span>
