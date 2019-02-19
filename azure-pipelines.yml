@@ -16,25 +16,19 @@ steps:
   inputs:
     versionSpec: '8.9.4'
 
-- script: yarn install
-  displayName: 'Install dependencies'
-
-- script: yarn test
-  displayName: 'Run tests'
-
 # - script: |
 #     echo Add other tasks to build, test, and deploy your project.
 #     echo See https://aka.ms/yaml
   # displayName: 'Run a multi-line script'
 
 
-# - task: Npm@1
-#   displayName: 'yarn install'
-#   inputs:
-#     command: install
+- task: Npm@1
+  displayName: 'Install dependencies (npm install)'
+  inputs:
+    command: install
 
-# - task: Npm@1
-#   displayName: 'yarn test'
-#   inputs:
-#     command: custom
-#     customCommand: 'test'
+- task: Npm@1
+  displayName: 'Running tests (npm test)'
+  inputs:
+    command: custom
+    customCommand: 'test'
