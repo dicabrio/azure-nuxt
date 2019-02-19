@@ -9,26 +9,32 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
+    
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 
 - task: NodeTool@0
   inputs:
     versionSpec: '8.9.4'
 
-- task: Npm@1
-  displayName: 'yarn install'
-  inputs:
-    command: install
+- script: yarn install
+  displayName: 'Install dependencies'
 
-- task: Npm@1
-  displayName: 'yarn test'
-  inputs:
-    command: custom
-    customCommand: 'test'
+- script: yarn test
+  displayName: 'Run tests'
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+  # displayName: 'Run a multi-line script'
+
+
+# - task: Npm@1
+#   displayName: 'yarn install'
+#   inputs:
+#     command: install
+
+# - task: Npm@1
+#   displayName: 'yarn test'
+#   inputs:
+#     command: custom
+#     customCommand: 'test'
